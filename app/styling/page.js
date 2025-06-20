@@ -1,14 +1,12 @@
-import Card from "../components/Card";
-import CodeBlock from "../components/CodeBlock";
-import Link from "next/link";
+import Link from 'next/link';
+import Card from '../components/Card';
+import CodeBlock from '../components/CodeBlock';
 
 export default function Styling() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Styling trong React
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">Styling trong React</h1>
         <p className="text-xl text-gray-600">
           Các phương pháp styling trong React từ cơ bản đến nâng cao
         </p>
@@ -29,7 +27,9 @@ export default function Styling() {
               <tr>
                 <td className="border border-gray-300 px-4 py-2 font-medium">Inline Styles</td>
                 <td className="border border-gray-300 px-4 py-2">Đơn giản, Dynamic</td>
-                <td className="border border-gray-300 px-4 py-2">Không reusable, No pseudo-classes</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Không reusable, No pseudo-classes
+                </td>
                 <td className="border border-gray-300 px-4 py-2">Quick prototyping</td>
               </tr>
               <tr className="bg-gray-50">
@@ -52,7 +52,9 @@ export default function Styling() {
               </tr>
               <tr>
                 <td className="border border-gray-300 px-4 py-2 font-medium">Tailwind CSS</td>
-                <td className="border border-gray-300 px-4 py-2">Utility-first, Fast development</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Utility-first, Fast development
+                </td>
                 <td className="border border-gray-300 px-4 py-2">HTML becomes verbose</td>
                 <td className="border border-gray-300 px-4 py-2">Rapid prototyping</td>
               </tr>
@@ -68,7 +70,7 @@ export default function Styling() {
 
         <h4 className="text-lg font-semibold mb-3">Basic Inline Styles:</h4>
         <CodeBlock>
-{`function Button({ type = 'primary', size = 'medium', children }) {
+          {`function Button({ type = 'primary', size = 'medium', children }) {
   const baseStyles = {
     padding: '10px 20px',
     border: 'none',
@@ -136,7 +138,7 @@ function App() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Dynamic Styles:</h4>
         <CodeBlock>
-{`function ProgressBar({ progress, color = '#3b82f6' }) {
+          {`function ProgressBar({ progress, color = '#3b82f6' }) {
   const containerStyle = {
     width: '100%',
     height: '20px',
@@ -193,7 +195,7 @@ function StatusCard({ status, message }) {
       <Card title="2. CSS Files và CSS Modules">
         <h4 className="text-lg font-semibold mb-3">Traditional CSS:</h4>
         <CodeBlock language="css">
-{`/* styles/Button.css */
+          {`/* styles/Button.css */
 .btn {
   padding: 10px 20px;
   border: none;
@@ -236,7 +238,7 @@ function StatusCard({ status, message }) {
         </CodeBlock>
 
         <CodeBlock>
-{`// Button.js
+          {`// Button.js
 import './Button.css';
 
 function Button({ type = 'primary', size = 'medium', disabled, children, ...props }) {
@@ -247,7 +249,7 @@ function Button({ type = 'primary', size = 'medium', disabled, children, ...prop
   ].filter(Boolean).join(' ');
 
   return (
-    <button 
+    <button
       className={classes}
       disabled={disabled}
       {...props}
@@ -260,7 +262,7 @@ function Button({ type = 'primary', size = 'medium', disabled, children, ...prop
 
         <h4 className="text-lg font-semibold mb-3 mt-6">CSS Modules:</h4>
         <CodeBlock language="css">
-{`/* Button.module.css */
+          {`/* Button.module.css */
 .button {
   padding: 10px 20px;
   border: none;
@@ -296,7 +298,7 @@ function Button({ type = 'primary', size = 'medium', disabled, children, ...prop
         </CodeBlock>
 
         <CodeBlock>
-{`// Button.js
+          {`// Button.js
 import styles from './Button.module.css';
 import classNames from 'classnames'; // npm install classnames
 
@@ -310,7 +312,7 @@ function Button({ type = 'primary', size, disabled, children, className, ...prop
   );
 
   return (
-    <button 
+    <button
       className={buttonClasses}
       disabled={disabled}
       {...props}
@@ -350,13 +352,11 @@ function Button({ type = 'primary', size, disabled, children, className, ...prop
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Cài đặt:</h4>
-        <CodeBlock language="bash">
-{`npm install styled-components`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install styled-components`}</CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Basic Styled Components:</h4>
         <CodeBlock>
-{`import styled from 'styled-components';
+          {`import styled from 'styled-components';
 
 // Basic styled component
 const Button = styled.button\`
@@ -367,7 +367,7 @@ const Button = styled.button\`
   font-size: 14px;
   font-weight: 500;
   transition: all 0.2s ease;
-  
+
   background-color: \${props => {
     switch (props.variant) {
       case 'primary': return '#3b82f6';
@@ -376,25 +376,25 @@ const Button = styled.button\`
       default: return '#3b82f6';
     }
   }};
-  
+
   color: white;
-  
+
   &:hover {
     opacity: 0.9;
     transform: translateY(-1px);
   }
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
   }
-  
+
   \${props => props.size === 'large' && \`
     padding: 14px 28px;
     font-size: 16px;
   \`}
-  
+
   \${props => props.size === 'small' && \`
     padding: 6px 12px;
     font-size: 12px;
@@ -421,7 +421,7 @@ function App() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Advanced Styled Components:</h4>
         <CodeBlock>
-{`import styled, { css, keyframes, ThemeProvider } from 'styled-components';
+          {`import styled, { css, keyframes, ThemeProvider } from 'styled-components';
 
 // Keyframes cho animations
 const fadeIn = keyframes\`
@@ -455,15 +455,15 @@ const Card = styled.div\`
   padding: 20px;
   margin: 10px;
   animation: \${fadeIn} 0.3s ease-in-out;
-  
+
   \${flexCenter}
   flex-direction: column;
-  
+
   \${props => props.theme.breakpoints.mobile} {
     padding: 16px;
     margin: 8px;
   }
-  
+
   \${props => props.elevated && css\`
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
@@ -506,7 +506,7 @@ const LoadingButton = styled.button\`
   color: white;
   cursor: \${props => props.loading ? 'not-allowed' : 'pointer'};
   opacity: \${props => props.loading ? 0.7 : 1};
-  
+
   &:hover:not(:disabled) {
     background: \${props => props.theme.colors.primaryDark};
   }
@@ -530,13 +530,13 @@ const theme = {
 // App với ThemeProvider
 function App() {
   const [loading, setLoading] = useState(false);
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Card elevated>
         <Text as="h2">Welcome to our app</Text>
         <Text>This is a description text.</Text>
-        <LoadingButton 
+        <LoadingButton
           loading={loading}
           onClick={() => setLoading(!loading)}
         >
@@ -544,7 +544,7 @@ function App() {
           {loading ? 'Loading...' : 'Click me'}
         </LoadingButton>
       </Card>
-      
+
       <PrimaryCard>
         <Text>This is a primary card</Text>
       </PrimaryCard>
@@ -561,7 +561,7 @@ function App() {
 
         <h4 className="text-lg font-semibold mb-3">Cài đặt Tailwind CSS:</h4>
         <CodeBlock language="bash">
-{`# Install Tailwind CSS
+          {`# Install Tailwind CSS
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
@@ -572,7 +572,7 @@ npx tailwindcss init`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Config file:</h4>
         <CodeBlock language="javascript">
-{`// tailwind.config.js
+          {`// tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -604,32 +604,32 @@ module.exports = {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Basic Tailwind Components:</h4>
         <CodeBlock>
-{`// Button component với Tailwind
-function Button({ 
-  variant = 'primary', 
-  size = 'md', 
-  children, 
+          {`// Button component với Tailwind
+function Button({
+  variant = 'primary',
+  size = 'md',
+  children,
   className = '',
-  ...props 
+  ...props
 }) {
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
-  
+
   const variants = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
     secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500',
     danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
     outline: 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 focus:ring-blue-500'
   };
-  
+
   const sizes = {
     sm: 'px-3 py-2 text-sm',
     md: 'px-4 py-2 text-sm',
     lg: 'px-6 py-3 text-base',
     xl: 'px-8 py-4 text-lg'
   };
-  
+
   const classes = \`\${baseClasses} \${variants[variant]} \${sizes[size]} \${className}\`;
-  
+
   return (
     <button className={classes} {...props}>
       {children}
@@ -686,7 +686,7 @@ function Dashboard() {
               </div>
             </div>
           </Card>
-          
+
           <Card>
             <h3 className="text-lg font-medium text-gray-900 mb-4">
               Quick Actions
@@ -712,55 +712,55 @@ function Dashboard() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Responsive Design với Tailwind:</h4>
         <CodeBlock>
-{`function ResponsiveLayout() {
+          {`function ResponsiveLayout() {
   return (
     <div className="container mx-auto px-4">
       {/* Mobile first approach */}
       <div className="
-        grid 
-        grid-cols-1 
-        sm:grid-cols-2 
-        lg:grid-cols-3 
-        xl:grid-cols-4 
-        gap-4 
-        sm:gap-6 
+        grid
+        grid-cols-1
+        sm:grid-cols-2
+        lg:grid-cols-3
+        xl:grid-cols-4
+        gap-4
+        sm:gap-6
         lg:gap-8
       ">
         {/* Card responsive */}
         <div className="
-          bg-white 
-          rounded-lg 
-          shadow-md 
-          p-4 
-          sm:p-6 
+          bg-white
+          rounded-lg
+          shadow-md
+          p-4
+          sm:p-6
           lg:p-8
-          transform 
-          hover:scale-105 
-          transition-transform 
+          transform
+          hover:scale-105
+          transition-transform
           duration-200
         ">
           <h3 className="
-            text-lg 
-            sm:text-xl 
-            lg:text-2xl 
-            font-bold 
-            mb-2 
+            text-lg
+            sm:text-xl
+            lg:text-2xl
+            font-bold
+            mb-2
             sm:mb-4
           ">
             Responsive Card
           </h3>
           <p className="
-            text-sm 
-            sm:text-base 
-            text-gray-600 
+            text-sm
+            sm:text-base
+            text-gray-600
             mb-4
           ">
             This card adapts to different screen sizes
           </p>
           <Button className="
-            w-full 
-            sm:w-auto 
-            text-sm 
+            w-full
+            sm:w-auto
+            text-sm
             sm:text-base
           ">
             Learn More
@@ -774,12 +774,12 @@ function Dashboard() {
           {/* Show only on mobile */}
           <p>Mobile only content</p>
         </div>
-        
+
         <div className="hidden sm:block lg:hidden">
           {/* Show only on tablet */}
           <p>Tablet only content</p>
         </div>
-        
+
         <div className="hidden lg:block">
           {/* Show only on desktop */}
           <p>Desktop only content</p>
@@ -792,7 +792,7 @@ function Dashboard() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Custom Components với Tailwind:</h4>
         <CodeBlock>
-{`// Using @apply directive trong CSS
+          {`// Using @apply directive trong CSS
 /* styles/components.css */
 @tailwind base;
 @tailwind components;
@@ -802,15 +802,15 @@ function Dashboard() {
   .btn {
     @apply inline-flex items-center justify-center px-4 py-2 font-medium rounded-md transition-colors;
   }
-  
+
   .btn-primary {
     @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
   }
-  
+
   .card {
     @apply bg-white rounded-lg shadow-md p-6;
   }
-  
+
   .form-input {
     @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500;
   }
@@ -824,14 +824,14 @@ function Badge({ variant = 'default', size = 'md', children, className }) {
     <span className={clsx(
       // Base styles
       'inline-flex items-center font-medium rounded-full',
-      
+
       // Sizes
       {
         'px-2 py-1 text-xs': size === 'sm',
         'px-3 py-1 text-sm': size === 'md',
         'px-4 py-2 text-base': size === 'lg'
       },
-      
+
       // Variants
       {
         'bg-gray-100 text-gray-800': variant === 'default',
@@ -840,7 +840,7 @@ function Badge({ variant = 'default', size = 'md', children, className }) {
         'bg-red-100 text-red-800': variant === 'danger',
         'bg-yellow-100 text-yellow-800': variant === 'warning'
       },
-      
+
       className
     )}>
       {children}
@@ -856,35 +856,35 @@ function ContactForm() {
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Name
         </label>
-        <input 
+        <input
           type="text"
           className="form-input"
           placeholder="Your name"
         />
       </div>
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Email
         </label>
-        <input 
+        <input
           type="email"
           className="form-input"
           placeholder="your@email.com"
         />
       </div>
-      
+
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
           Message
         </label>
-        <textarea 
+        <textarea
           rows={4}
           className="form-input resize-none"
           placeholder="Your message..."
         />
       </div>
-      
+
       <Button type="submit" className="w-full">
         Send Message
       </Button>
@@ -900,13 +900,11 @@ function ContactForm() {
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Cài đặt Emotion:</h4>
-        <CodeBlock language="bash">
-{`npm install @emotion/react @emotion/styled`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install @emotion/react @emotion/styled`}</CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">CSS prop với Emotion:</h4>
         <CodeBlock>
-{`/** @jsxImportSource @emotion/react */
+          {`/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
 const buttonStyle = css\`
@@ -918,7 +916,7 @@ const buttonStyle = css\`
   background-color: #3b82f6;
   color: white;
   transition: background-color 0.2s ease;
-  
+
   &:hover {
     background-color: #2563eb;
   }
@@ -930,7 +928,7 @@ function App() {
       <button css={buttonStyle}>
         Emotion Button
       </button>
-      
+
       {/* Inline css prop */}
       <div css={css\`
         padding: 20px;
@@ -949,13 +947,11 @@ function App() {
 
       <Card title="6. Sass/SCSS trong React">
         <h4 className="text-lg font-semibold mb-3">Cài đặt Sass:</h4>
-        <CodeBlock language="bash">
-{`npm install sass`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install sass`}</CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">SCSS với variables và mixins:</h4>
         <CodeBlock language="scss">
-{`// styles/_variables.scss
+          {`// styles/_variables.scss
 $primary-color: #3b82f6;
 $secondary-color: #6b7280;
 $success-color: #10b981;
@@ -979,13 +975,13 @@ $transition: all 0.2s ease;
   font-weight: 500;
   cursor: pointer;
   transition: $transition;
-  
+
   &:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
     box-shadow: 0 0 0 2px $primary-color;
   }
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -995,7 +991,7 @@ $transition: all 0.2s ease;
 @mixin button-variant($bg-color, $text-color: white, $hover-color: darken($bg-color, 10%)) {
   background-color: $bg-color;
   color: $text-color;
-  
+
   &:hover:not(:disabled) {
     background-color: $hover-color;
   }
@@ -1007,24 +1003,24 @@ $transition: all 0.2s ease;
 
 .button {
   @include button-base;
-  
+
   &--primary {
     @include button-variant($primary-color);
   }
-  
+
   &--secondary {
     @include button-variant($secondary-color);
   }
-  
+
   &--danger {
     @include button-variant($danger-color);
   }
-  
+
   &--small {
     padding: 0.25rem 0.75rem;
     font-size: $font-size-sm;
   }
-  
+
   &--large {
     padding: 0.75rem 1.5rem;
     font-size: $font-size-lg;
@@ -1035,23 +1031,21 @@ $transition: all 0.2s ease;
 
       <Card title="7. Ant Design & Material-UI">
         <h4 className="text-lg font-semibold mb-3">Ant Design:</h4>
-        <CodeBlock language="bash">
-{`npm install antd`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install antd`}</CodeBlock>
 
         <CodeBlock>
-{`import { Button, Card, Form, Input, Space, Table } from 'antd';
+          {`import { Button, Card, Form, Input, Space, Table } from 'antd';
 import 'antd/dist/reset.css';
 
 function AntDesignExample() {
   const [form] = Form.useForm();
-  
+
   const columns = [
     { title: 'Name', dataIndex: 'name', key: 'name' },
     { title: 'Age', dataIndex: 'age', key: 'age' },
     { title: 'Email', dataIndex: 'email', key: 'email' }
   ];
-  
+
   const data = [
     { key: '1', name: 'John', age: 32, email: 'john@example.com' },
     { key: '2', name: 'Jane', age: 28, email: 'jane@example.com' }
@@ -1075,7 +1069,7 @@ function AntDesignExample() {
           </Form.Item>
         </Form>
       </Card>
-      
+
       <Card title="Users Table">
         <Table columns={columns} dataSource={data} />
       </Card>
@@ -1086,16 +1080,16 @@ function AntDesignExample() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Material-UI:</h4>
         <CodeBlock language="bash">
-{`npm install @mui/material @emotion/react @emotion/styled`}
+          {`npm install @mui/material @emotion/react @emotion/styled`}
         </CodeBlock>
 
         <CodeBlock>
-{`import { 
-  Button, 
-  Card, 
-  CardContent, 
-  TextField, 
-  Typography, 
+          {`import {
+  Button,
+  Card,
+  CardContent,
+  TextField,
+  Typography,
   Box,
   ThemeProvider,
   createTheme
@@ -1121,7 +1115,7 @@ function MaterialUIExample() {
             <Typography variant="h5" component="h2" gutterBottom>
               Contact Form
             </Typography>
-            
+
             <Box component="form" sx={{ mt: 2 }}>
               <TextField
                 fullWidth
@@ -1146,11 +1140,11 @@ function MaterialUIExample() {
                 variant="outlined"
                 margin="normal"
               />
-              
+
               <Box sx={{ mt: 2 }}>
-                <Button 
-                  variant="contained" 
-                  color="primary" 
+                <Button
+                  variant="contained"
+                  color="primary"
                   fullWidth
                   size="large"
                 >
@@ -1172,7 +1166,7 @@ function MaterialUIExample() {
           <div>
             <h4 className="text-lg font-semibold mb-3 text-blue-600">1. CSS-in-JS Optimization:</h4>
             <CodeBlock>
-{`// ❌ Tránh tạo styles trong render
+              {`// ❌ Tránh tạo styles trong render
 function BadComponent() {
   return (
     <div style={{
@@ -1203,10 +1197,12 @@ const Container = styled.div\`
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-3 text-green-600">2. CSS Loading Optimization:</h4>
+            <h4 className="text-lg font-semibold mb-3 text-green-600">
+              2. CSS Loading Optimization:
+            </h4>
             <CodeBlock>
-{`// Code splitting CSS
-const LazyComponent = lazy(() => 
+              {`// Code splitting CSS
+const LazyComponent = lazy(() =>
   import('./LazyComponent' /* webpackChunkName: "lazy-component" */)
 );
 
@@ -1229,9 +1225,11 @@ module.exports = {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-3 text-purple-600">3. Bundle Size Optimization:</h4>
+            <h4 className="text-lg font-semibold mb-3 text-purple-600">
+              3. Bundle Size Optimization:
+            </h4>
             <CodeBlock>
-{`// Tree shaking với Ant Design
+              {`// Tree shaking với Ant Design
 import Button from 'antd/es/button';
 import 'antd/es/button/style/css';
 

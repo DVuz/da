@@ -1,32 +1,37 @@
-import Card from "../components/Card";
-import CodeBlock from "../components/CodeBlock";
-import Link from "next/link";
+import Link from 'next/link';
+import Card from '../components/Card';
+import CodeBlock from '../components/CodeBlock';
 
 export default function Redux() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Redux & Redux Toolkit
-        </h1>
-        <p className="text-xl text-gray-600">
-          Quản lý state toàn cục với Redux và Redux Toolkit
-        </p>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">Redux & Redux Toolkit</h1>
+        <p className="text-xl text-gray-600">Quản lý state toàn cục với Redux và Redux Toolkit</p>
       </div>
 
       <Card title="Redux là gì?">
         <p className="mb-4">
-          <strong>Redux</strong> là một thư viện JavaScript để quản lý state toàn cục của ứng dụng. 
-          Redux theo dõi mô hình Flux architecture với một luồng dữ liệu một chiều (unidirectional data flow).
+          <strong>Redux</strong> là một thư viện JavaScript để quản lý state toàn cục của ứng dụng.
+          Redux theo dõi mô hình Flux architecture với một luồng dữ liệu một chiều (unidirectional
+          data flow).
         </p>
 
         <div className="bg-blue-50 p-4 rounded-lg mb-4">
           <h4 className="font-semibold text-blue-800 mb-2">Các khái niệm cốt lõi:</h4>
           <ul className="space-y-1 text-blue-700">
-            <li>• <strong>Store:</strong> Nơi lưu trữ toàn bộ state của ứng dụng</li>
-            <li>• <strong>Action:</strong> Object mô tả điều gì đã xảy ra</li>
-            <li>• <strong>Reducer:</strong> Pure function quyết định cách state thay đổi</li>
-            <li>• <strong>Dispatch:</strong> Phương thức gửi action đến store</li>
+            <li>
+              • <strong>Store:</strong> Nơi lưu trữ toàn bộ state của ứng dụng
+            </li>
+            <li>
+              • <strong>Action:</strong> Object mô tả điều gì đã xảy ra
+            </li>
+            <li>
+              • <strong>Reducer:</strong> Pure function quyết định cách state thay đổi
+            </li>
+            <li>
+              • <strong>Dispatch:</strong> Phương thức gửi action đến store
+            </li>
           </ul>
         </div>
 
@@ -77,7 +82,7 @@ export default function Redux() {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-3 text-orange-600">Khi không cần Redux:</h4>
             <ul className="space-y-2">
@@ -103,18 +108,14 @@ export default function Redux() {
       </Card>
 
       <Card title="Redux Classic Setup">
-        <p className="mb-4">
-          Cách setup Redux truyền thống (trước khi có Redux Toolkit).
-        </p>
+        <p className="mb-4">Cách setup Redux truyền thống (trước khi có Redux Toolkit).</p>
 
         <h4 className="text-lg font-semibold mb-3">Cài đặt Redux:</h4>
-        <CodeBlock language="bash">
-{`npm install redux react-redux`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install redux react-redux`}</CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Actions:</h4>
         <CodeBlock>
-{`// actions/todoActions.js
+          {`// actions/todoActions.js
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
@@ -162,7 +163,7 @@ export const fetchTodos = () => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Reducers:</h4>
         <CodeBlock>
-{`// reducers/todoReducer.js
+          {`// reducers/todoReducer.js
 import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../actions/todoActions';
 
 const initialState = {
@@ -178,7 +179,7 @@ export default function todoReducer(state = initialState, action) {
         ...state,
         todos: [...state.todos, action.payload]
       };
-      
+
     case TOGGLE_TODO:
       return {
         ...state,
@@ -188,22 +189,22 @@ export default function todoReducer(state = initialState, action) {
             : todo
         )
       };
-      
+
     case DELETE_TODO:
       return {
         ...state,
         todos: state.todos.filter(todo => todo.id !== action.payload)
       };
-      
+
     case 'FETCH_TODOS_START':
       return { ...state, loading: true, error: null };
-      
+
     case 'FETCH_TODOS_SUCCESS':
       return { ...state, loading: false, todos: action.payload };
-      
+
     case 'FETCH_TODOS_ERROR':
       return { ...state, loading: false, error: action.payload };
-      
+
     default:
       return state;
   }
@@ -222,7 +223,7 @@ export default combineReducers({
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Store Setup:</h4>
         <CodeBlock>
-{`// store/index.js
+          {`// store/index.js
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
@@ -252,18 +253,18 @@ ReactDOM.render(
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Sử dụng trong Components:</h4>
         <CodeBlock>
-{`// components/TodoApp.js
+          {`// components/TodoApp.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addTodo, toggleTodo, deleteTodo } from '../actions/todoActions';
 
 function TodoApp() {
   const [inputText, setInputText] = useState('');
-  
+
   // Lấy state từ store
   const { todos, loading, error } = useSelector(state => state.todos);
   const filter = useSelector(state => state.filter);
-  
+
   // Dispatch actions
   const dispatch = useDispatch();
 
@@ -305,8 +306,8 @@ function TodoApp() {
               checked={todo.completed}
               onChange={() => handleToggle(todo.id)}
             />
-            <span style={{ 
-              textDecoration: todo.completed ? 'line-through' : 'none' 
+            <span style={{
+              textDecoration: todo.completed ? 'line-through' : 'none'
             }}>
               {todo.text}
             </span>
@@ -322,8 +323,8 @@ function TodoApp() {
 
       <Card title="Redux Toolkit (RTK)">
         <p className="mb-4">
-          <strong>Redux Toolkit</strong> là cách được khuyến nghị để viết Redux logic. 
-          RTK giúp giảm boilerplate code và cung cấp các best practices mặc định.
+          <strong>Redux Toolkit</strong> là cách được khuyến nghị để viết Redux logic. RTK giúp giảm
+          boilerplate code và cung cấp các best practices mặc định.
         </p>
 
         <div className="bg-green-50 p-4 rounded-lg mb-4">
@@ -338,13 +339,11 @@ function TodoApp() {
         </div>
 
         <h4 className="text-lg font-semibold mb-3">Cài đặt Redux Toolkit:</h4>
-        <CodeBlock language="bash">
-{`npm install @reduxjs/toolkit react-redux`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install @reduxjs/toolkit react-redux`}</CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">createSlice - Tạo Reducer và Actions:</h4>
         <CodeBlock>
-{`// features/todoSlice.js
+          {`// features/todoSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const todoSlice = createSlice({
@@ -364,22 +363,22 @@ const todoSlice = createSlice({
         completed: false
       });
     },
-    
+
     toggleTodo: (state, action) => {
       const todo = state.items.find(todo => todo.id === action.payload);
       if (todo) {
         todo.completed = !todo.completed;
       }
     },
-    
+
     deleteTodo: (state, action) => {
       state.items = state.items.filter(todo => todo.id !== action.payload);
     },
-    
+
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
-    
+
     setError: (state, action) => {
       state.error = action.payload;
       state.loading = false;
@@ -396,7 +395,7 @@ export default todoSlice.reducer;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">configureStore - Setup Store:</h4>
         <CodeBlock>
-{`// store/index.js
+          {`// store/index.js
 import { configureStore } from '@reduxjs/toolkit';
 import todoReducer from '../features/todoSlice';
 import userReducer from '../features/userSlice';
@@ -422,7 +421,7 @@ export type AppDispatch = typeof store.dispatch;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">createAsyncThunk - Async Actions:</h4>
         <CodeBlock>
-{`// features/todoSlice.js
+          {`// features/todoSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Async thunk cho fetch todos
@@ -500,12 +499,13 @@ export default todoSlice.reducer;`}
 
       <Card title="RTK Query - Data Fetching">
         <p className="mb-4">
-          <strong>RTK Query</strong> là một add-on cho Redux Toolkit chuyên dành cho data fetching và caching.
+          <strong>RTK Query</strong> là một add-on cho Redux Toolkit chuyên dành cho data fetching
+          và caching.
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Setup RTK Query:</h4>
         <CodeBlock>
-{`// services/api.js
+          {`// services/api.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
@@ -527,12 +527,12 @@ export const api = createApi({
       query: () => 'todos',
       providesTags: ['Todo']
     }),
-    
+
     getTodo: builder.query({
       query: (id) => \`todos/\${id}\`,
       providesTags: (result, error, id) => [{ type: 'Todo', id }]
     }),
-    
+
     // Mutations (POST, PUT, DELETE)
     createTodo: builder.mutation({
       query: (newTodo) => ({
@@ -542,7 +542,7 @@ export const api = createApi({
       }),
       invalidatesTags: ['Todo']
     }),
-    
+
     updateTodo: builder.mutation({
       query: ({ id, ...patch }) => ({
         url: \`todos/\${id}\`,
@@ -551,7 +551,7 @@ export const api = createApi({
       }),
       invalidatesTags: (result, error, { id }) => [{ type: 'Todo', id }]
     }),
-    
+
     deleteTodo: builder.mutation({
       query: (id) => ({
         url: \`todos/\${id}\`,
@@ -574,7 +574,7 @@ export const {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Sử dụng RTK Query trong Component:</h4>
         <CodeBlock>
-{`// components/TodoList.js
+          {`// components/TodoList.js
 import React from 'react';
 import {
   useGetTodosQuery,
@@ -633,7 +633,7 @@ function TodoList() {
       <button onClick={() => handleAddTodo('New Todo')}>
         Add Todo
       </button>
-      
+
       <ul>
         {todos.map(todo => (
           <li key={todo.id}>
@@ -649,7 +649,7 @@ function TodoList() {
           </li>
         ))}
       </ul>
-      
+
       <button onClick={refetch}>Refresh</button>
     </div>
   );
@@ -658,7 +658,7 @@ function TodoList() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Advanced RTK Query Features:</h4>
         <CodeBlock>
-{`// Optimistic Updates
+          {`// Optimistic Updates
 const updateTodo = builder.mutation({
   query: ({ id, ...patch }) => ({
     url: \`todos/\${id}\`,
@@ -673,7 +673,7 @@ const updateTodo = builder.mutation({
         if (todo) Object.assign(todo, patch);
       })
     );
-    
+
     try {
       await queryFulfilled;
     } catch {
@@ -697,7 +697,7 @@ function UserProfile({ userId }) {
 // Manual cache manipulation
 function TodoManager() {
   const dispatch = useDispatch();
-  
+
   const addTodoToCache = (newTodo) => {
     dispatch(
       api.util.updateQueryData('getTodos', undefined, (draft) => {
@@ -726,7 +726,7 @@ function TodoManager() {
           <div>
             <h4 className="text-lg font-semibold mb-3 text-blue-600">Structure và Organization:</h4>
             <CodeBlock>
-{`// Feature-based folder structure
+              {`// Feature-based folder structure
 src/
   features/
     todos/
@@ -757,7 +757,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;`}
           <div>
             <h4 className="text-lg font-semibold mb-3 text-green-600">Normalized State Shape:</h4>
             <CodeBlock>
-{`// Thay vì array of objects
+              {`// Thay vì array of objects
 const badState = {
   todos: [
     { id: 1, text: 'Learn Redux', userId: 1 },
@@ -815,9 +815,11 @@ export const {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-3 text-purple-600">Performance Optimization:</h4>
+            <h4 className="text-lg font-semibold mb-3 text-purple-600">
+              Performance Optimization:
+            </h4>
             <CodeBlock>
-{`// Sử dụng memoized selectors
+              {`// Sử dụng memoized selectors
 import { createSelector } from '@reduxjs/toolkit';
 
 const selectTodos = (state) => state.todos.items;
@@ -840,7 +842,7 @@ export const selectFilteredTodos = createSelector(
 // Component sử dụng memoized selector
 function TodoList() {
   const filteredTodos = useAppSelector(selectFilteredTodos);
-  
+
   return (
     <ul>
       {filteredTodos.map(todo => (
@@ -863,9 +865,7 @@ const { todos, filter } = useAppSelector(
       </Card>
 
       <Card title="Redux DevTools">
-        <p className="mb-4">
-          Redux DevTools Extension giúp debug và monitor Redux state changes.
-        </p>
+        <p className="mb-4">Redux DevTools Extension giúp debug và monitor Redux state changes.</p>
 
         <div className="bg-yellow-50 p-4 rounded-lg mb-4">
           <h4 className="font-semibold text-yellow-800 mb-2">Tính năng chính:</h4>
@@ -879,7 +879,7 @@ const { todos, filter } = useAppSelector(
         </div>
 
         <CodeBlock>
-{`// Setup DevTools với Redux Toolkit (automatic)
+          {`// Setup DevTools với Redux Toolkit (automatic)
 const store = configureStore({
   reducer: rootReducer,
   // DevTools được enable tự động trong development

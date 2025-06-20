@@ -1,22 +1,9 @@
 // ...existing code...
 
 // Tìm phần ShoppingApp component và thêm import useState, useMemo
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useCallback,
-  useRef,
-  useReducer,
-  useContext,
-  createContext,
-  useId,
-  Children,
-  cloneElement,
-} from 'react';
+import Link from 'next/link';
 import Card from '../components/Card';
 import CodeBlock from '../components/CodeBlock';
-import Link from 'next/link';
 
 export default function Advanced() {
   return (

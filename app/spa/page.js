@@ -1,14 +1,12 @@
-import Card from "../components/Card";
-import CodeBlock from "../components/CodeBlock";
-import Link from "next/link";
+import Link from 'next/link';
+import Card from '../components/Card';
+import CodeBlock from '../components/CodeBlock';
 
 export default function SPA() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          SPA - Single Page Application
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">SPA - Single Page Application</h1>
         <p className="text-xl text-gray-600">
           Tìm hiểu về mô hình Single Page Application và cách React hỗ trợ xây dựng SPA
         </p>
@@ -16,9 +14,9 @@ export default function SPA() {
 
       <Card title="SPA là gì?">
         <p className="mb-4">
-          <strong>Single Page Application (SPA)</strong> là một ứng dụng web hoạt động trong một trang duy nhất,
-          không cần reload toàn bộ trang khi người dùng tương tác. Thay vào đó, SPA dynamically cập nhật
-          nội dung bằng JavaScript.
+          <strong>Single Page Application (SPA)</strong> là một ứng dụng web hoạt động trong một
+          trang duy nhất, không cần reload toàn bộ trang khi người dùng tương tác. Thay vào đó, SPA
+          dynamically cập nhật nội dung bằng JavaScript.
         </p>
 
         <div className="bg-blue-50 p-4 rounded-lg mb-4">
@@ -37,19 +35,27 @@ export default function SPA() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Tốc độ:</strong> Không cần reload trang, chỉ tải dữ liệu cần thiết</div>
+                <div>
+                  <strong>Tốc độ:</strong> Không cần reload trang, chỉ tải dữ liệu cần thiết
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>UX tốt:</strong> Chuyển đổi mượt mà giữa các views</div>
+                <div>
+                  <strong>UX tốt:</strong> Chuyển đổi mượt mà giữa các views
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Caching:</strong> Resources được cache hiệu quả</div>
+                <div>
+                  <strong>Caching:</strong> Resources được cache hiệu quả
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Offline:</strong> Có thể hoạt động offline với Service Workers</div>
+                <div>
+                  <strong>Offline:</strong> Có thể hoạt động offline với Service Workers
+                </div>
               </li>
             </ul>
           </div>
@@ -59,19 +65,27 @@ export default function SPA() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-red-500 mr-2">✗</span>
-                <div><strong>SEO:</strong> Khó khăn với SEO (cần SSR)</div>
+                <div>
+                  <strong>SEO:</strong> Khó khăn với SEO (cần SSR)
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-red-500 mr-2">✗</span>
-                <div><strong>Initial load:</strong> Tải lần đầu có thể chậm</div>
+                <div>
+                  <strong>Initial load:</strong> Tải lần đầu có thể chậm
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-red-500 mr-2">✗</span>
-                <div><strong>Browser history:</strong> Cần xử lý routing phức tạp</div>
+                <div>
+                  <strong>Browser history:</strong> Cần xử lý routing phức tạp
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-red-500 mr-2">✗</span>
-                <div><strong>JavaScript required:</strong> Không hoạt động nếu JS bị tắt</div>
+                <div>
+                  <strong>JavaScript required:</strong> Không hoạt động nếu JS bị tắt
+                </div>
               </li>
             </ul>
           </div>
@@ -125,13 +139,11 @@ export default function SPA() {
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Cài đặt React Router:</h4>
-        <CodeBlock language="bash">
-{`npm install react-router-dom`}
-        </CodeBlock>
+        <CodeBlock language="bash">{`npm install react-router-dom`}</CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Basic Routing Setup:</h4>
         <CodeBlock>
-{`import React from 'react';
+          {`import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -177,7 +189,7 @@ export default App;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Dynamic Routes và Params:</h4>
         <CodeBlock>
-{`import { useParams, useNavigate, useLocation } from 'react-router-dom';
+          {`import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
 // Route với params
 <Route path="/users/:id" element={<UserProfile />} />
@@ -250,7 +262,7 @@ function Dashboard() {
 
         <h4 className="text-lg font-semibold mb-3">Fetch Data với useEffect:</h4>
         <CodeBlock>
-{`import React, { useState, useEffect } from 'react';
+          {`import React, { useState, useEffect } from 'react';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -298,7 +310,7 @@ function ProductList() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Custom Hook cho Data Fetching:</h4>
         <CodeBlock>
-{`// Custom hook: useFetch
+          {`// Custom hook: useFetch
 function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -347,7 +359,7 @@ function UserProfile({ userId }) {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">React Query cho Advanced Data Fetching:</h4>
         <CodeBlock>
-{`// Cài đặt: npm install @tanstack/react-query
+          {`// Cài đặt: npm install @tanstack/react-query
 
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -403,12 +415,13 @@ function ProductList() {
 
       <Card title="State Management trong SPA">
         <p className="mb-4">
-          Khi ứng dụng SPA phức tạp, việc quản lý state trở nên quan trọng. React cung cấp nhiều cách để share state giữa components.
+          Khi ứng dụng SPA phức tạp, việc quản lý state trở nên quan trọng. React cung cấp nhiều
+          cách để share state giữa components.
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Context API:</h4>
         <CodeBlock>
-{`import React, { createContext, useContext, useReducer } from 'react';
+          {`import React, { createContext, useContext, useReducer } from 'react';
 
 // Create Context
 const AppContext = createContext();
@@ -502,7 +515,7 @@ function Header() {
 
         <h4 className="text-lg font-semibold mb-3">Code Splitting:</h4>
         <CodeBlock>
-{`import React, { lazy, Suspense } from 'react';
+          {`import React, { lazy, Suspense } from 'react';
 
 // Lazy load components
 const Home = lazy(() => import('./components/Home'));
@@ -541,7 +554,7 @@ const LazyComponent = lazy(() =>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">React.memo và useMemo:</h4>
         <CodeBlock>
-{`import React, { memo, useMemo, useCallback } from 'react';
+          {`import React, { memo, useMemo, useCallback } from 'react';
 
 // Memoize component để tránh re-render không cần thiết
 const ProductCard = memo(function ProductCard({ product, onAddToCart }) {
@@ -595,7 +608,7 @@ function ProductList({ products, filters }) {
 
         <h4 className="text-lg font-semibold mb-3">Service Worker Registration:</h4>
         <CodeBlock>
-{`// public/sw.js - Service Worker
+          {`// public/sw.js - Service Worker
 const CACHE_NAME = 'my-spa-v1';
 const urlsToCache = [
   '/',
@@ -639,7 +652,7 @@ if ('serviceWorker' in navigator) {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Web App Manifest:</h4>
         <CodeBlock language="json">
-{`{
+          {`{
   "name": "My React SPA",
   "short_name": "React SPA",
   "description": "A React Single Page Application",
@@ -667,8 +680,6 @@ if ('serviceWorker' in navigator) {
 }`}
         </CodeBlock>
       </Card>
-
-
 
       {/* Navigation */}
       <div className="flex justify-between mt-12 pt-8 border-t">

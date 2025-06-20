@@ -1,33 +1,41 @@
-import Card from "../components/Card";
-import CodeBlock from "../components/CodeBlock";
-import Link from "next/link";
+import Link from 'next/link';
+import Card from '../components/Card';
+import CodeBlock from '../components/CodeBlock';
 
 export default function ReactBasics() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">React Cơ Bản</h1>
-        <p className="text-xl text-gray-600">
-          Tìm hiểu React từ những khái niệm cơ bản nhất
-        </p>
+        <p className="text-xl text-gray-600">Tìm hiểu React từ những khái niệm cơ bản nhất</p>
       </div>
 
       <Card title="React là gì?">
         <p className="mb-4">
-          <strong>React</strong> là một thư viện JavaScript mã nguồn mở được phát triển bởi Facebook (Meta) 
-          để xây dựng giao diện người dùng (User Interface - UI), đặc biệt là cho các ứng dụng web.
+          <strong>React</strong> là một thư viện JavaScript mã nguồn mở được phát triển bởi Facebook
+          (Meta) để xây dựng giao diện người dùng (User Interface - UI), đặc biệt là cho các ứng
+          dụng web.
         </p>
-        
+
         <h4 className="text-lg font-semibold mb-2">Đặc điểm chính của React:</h4>
         <ul className="list-disc list-inside mb-4 space-y-2">
-          <li><strong>Component-based:</strong> Xây dựng UI từ các component độc lập, có thể tái sử dụng</li>
-          <li><strong>Declarative:</strong> Mô tả UI như thế nào thay vì làm thế nào</li>
-          <li><strong>Virtual DOM:</strong> Sử dụng Virtual DOM để tối ưu hiệu suất</li>
-          <li><strong>One-way data flow:</strong> Dữ liệu chảy một chiều từ parent đến child</li>
+          <li>
+            <strong>Component-based:</strong> Xây dựng UI từ các component độc lập, có thể tái sử
+            dụng
+          </li>
+          <li>
+            <strong>Declarative:</strong> Mô tả UI như thế nào thay vì làm thế nào
+          </li>
+          <li>
+            <strong>Virtual DOM:</strong> Sử dụng Virtual DOM để tối ưu hiệu suất
+          </li>
+          <li>
+            <strong>One-way data flow:</strong> Dữ liệu chảy một chiều từ parent đến child
+          </li>
         </ul>
 
         <CodeBlock>
-{`// Ví dụ component React đơn giản
+          {`// Ví dụ component React đơn giản
 import React from 'react';
 
 function Welcome(props) {
@@ -85,7 +93,7 @@ export default App;`}
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-semibold mb-3 text-blue-600">Ứng dụng thực tế:</h4>
             <ul className="space-y-2">
@@ -116,11 +124,12 @@ export default App;`}
 
       <Card title="JSX - JavaScript XML">
         <p className="mb-4">
-          JSX là phần mở rộng cú pháp cho JavaScript cho phép viết HTML-like syntax trong JavaScript.
+          JSX là phần mở rộng cú pháp cho JavaScript cho phép viết HTML-like syntax trong
+          JavaScript.
         </p>
 
         <CodeBlock>
-{`// JSX
+          {`// JSX
 const element = <h1>Hello, world!</h1>;
 
 // Tương đương với JavaScript thuần:
@@ -149,12 +158,13 @@ const element = (
 
       <Card title="Components và Props">
         <p className="mb-4">
-          Components là khối xây dựng cơ bản của React. Props (properties) là cách truyền dữ liệu từ component cha đến component con.
+          Components là khối xây dựng cơ bản của React. Props (properties) là cách truyền dữ liệu từ
+          component cha đến component con.
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Function Components:</h4>
         <CodeBlock>
-{`// Function Component đơn giản
+          {`// Function Component đơn giản
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
@@ -180,7 +190,7 @@ const Welcome = ({ name, age }) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Props Validation với PropTypes:</h4>
         <CodeBlock>
-{`import PropTypes from 'prop-types';
+          {`import PropTypes from 'prop-types';
 
 function UserCard({ name, email, age, isActive }) {
   return (
@@ -209,13 +219,13 @@ UserCard.defaultProps = {
 
       <Card title="State và Lifecycle">
         <p className="mb-4">
-          State là dữ liệu nội bộ của component có thể thay đổi theo thời gian. 
-          Hooks như useState và useEffect giúp quản lý state và lifecycle.
+          State là dữ liệu nội bộ của component có thể thay đổi theo thời gian. Hooks như useState
+          và useEffect giúp quản lý state và lifecycle.
         </p>
 
         <h4 className="text-lg font-semibold mb-3">useState Hook:</h4>
         <CodeBlock>
-{`import React, { useState } from 'react';
+          {`import React, { useState } from 'react';
 
 function Counter() {
   // Khai báo state variable
@@ -228,8 +238,8 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
-      
-      <input 
+
+      <input
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Nhập tên của bạn"
@@ -242,7 +252,7 @@ function Counter() {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">useEffect Hook:</h4>
         <CodeBlock>
-{`import React, { useState, useEffect } from 'react';
+          {`import React, { useState, useEffect } from 'react';
 
 function UserProfile({ userId }) {
   const [user, setUser] = useState(null);
@@ -293,11 +303,12 @@ function UserProfile({ userId }) {
 
       <Card title="Event Handling">
         <p className="mb-4">
-          React sử dụng SyntheticEvents để xử lý events một cách nhất quán trên các trình duyệt khác nhau.
+          React sử dụng SyntheticEvents để xử lý events một cách nhất quán trên các trình duyệt khác
+          nhau.
         </p>
 
         <CodeBlock>
-{`function Form() {
+          {`function Form() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -317,7 +328,7 @@ function UserProfile({ userId }) {
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
     console.log('Form submitted:', formData);
-    
+
     // Reset form
     setFormData({ name: '', email: '', message: '' });
   };
@@ -336,7 +347,7 @@ function UserProfile({ userId }) {
         onChange={handleChange}
         placeholder="Tên của bạn"
       />
-      
+
       <input
         type="email"
         name="email"
@@ -344,14 +355,14 @@ function UserProfile({ userId }) {
         onChange={handleChange}
         placeholder="Email"
       />
-      
+
       <textarea
         name="message"
         value={formData.message}
         onChange={handleChange}
         placeholder="Tin nhắn"
       />
-      
+
       <button type="submit">Gửi</button>
       <button type="button" onClick={handleClick}>
         Click me
@@ -363,12 +374,10 @@ function UserProfile({ userId }) {
       </Card>
 
       <Card title="Conditional Rendering">
-        <p className="mb-4">
-          React cho phép render components hoặc elements dựa trên điều kiện.
-        </p>
+        <p className="mb-4">React cho phép render components hoặc elements dựa trên điều kiện.</p>
 
         <CodeBlock>
-{`function UserGreeting({ user, isLoggedIn }) {
+          {`function UserGreeting({ user, isLoggedIn }) {
   // If-else với early return
   if (!isLoggedIn) {
     return <div>Vui lòng đăng nhập</div>;
@@ -382,14 +391,14 @@ function UserProfile({ userId }) {
       ) : (
         <h1>Xin chào, khách!</h1>
       )}
-      
+
       {/* Logical AND operator */}
       {user && user.isAdmin && (
         <div className="admin-panel">
           <h2>Admin Panel</h2>
         </div>
       )}
-      
+
       {/* Multiple conditions */}
       {user && user.notifications && user.notifications.length > 0 && (
         <div className="notifications">
@@ -422,11 +431,12 @@ function StatusIndicator({ status }) {
 
       <Card title="Lists và Keys">
         <p className="mb-4">
-          Khi render danh sách items trong React, cần sử dụng keys để React có thể track được các changes.
+          Khi render danh sách items trong React, cần sử dụng keys để React có thể track được các
+          changes.
         </p>
 
         <CodeBlock>
-{`function TodoList({ todos }) {
+          {`function TodoList({ todos }) {
   return (
     <ul>
       {todos.map(todo => (
@@ -466,7 +476,7 @@ function CategoryList({ categories }) {
 
 // Filter và render
 function ProductList({ products, filter }) {
-  const filteredProducts = products.filter(product => 
+  const filteredProducts = products.filter(product =>
     product.name.toLowerCase().includes(filter.toLowerCase())
   );
 

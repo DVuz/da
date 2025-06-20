@@ -1,14 +1,12 @@
-import Card from "../components/Card";
-import CodeBlock from "../components/CodeBlock";
-import Link from "next/link";
+import Link from 'next/link';
+import Card from '../components/Card';
+import CodeBlock from '../components/CodeBlock';
 
 export default function MySQL() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          MySQL - Hệ quản trị cơ sở dữ liệu
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">MySQL - Hệ quản trị cơ sở dữ liệu</h1>
         <p className="text-xl text-gray-600">
           Tìm hiểu về MySQL, từ cơ bản đến nâng cao, và cách tích hợp với React
         </p>
@@ -16,8 +14,8 @@ export default function MySQL() {
 
       <Card title="MySQL là gì?">
         <p className="mb-4">
-          <strong>MySQL</strong> là một hệ quản trị cơ sở dữ liệu quan hệ (RDBMS) mã nguồn mở,
-          sử dụng ngôn ngữ SQL (Structured Query Language) để quản lý dữ liệu.
+          <strong>MySQL</strong> là một hệ quản trị cơ sở dữ liệu quan hệ (RDBMS) mã nguồn mở, sử
+          dụng ngôn ngữ SQL (Structured Query Language) để quản lý dữ liệu.
         </p>
 
         <div className="bg-blue-50 p-4 rounded-lg mb-4">
@@ -38,19 +36,27 @@ export default function MySQL() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Hiệu suất cao:</strong> Tối ưu cho read-heavy workloads</div>
+                <div>
+                  <strong>Hiệu suất cao:</strong> Tối ưu cho read-heavy workloads
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Dễ sử dụng:</strong> Syntax đơn giản, documentation tốt</div>
+                <div>
+                  <strong>Dễ sử dụng:</strong> Syntax đơn giản, documentation tốt
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Cộng đồng lớn:</strong> Nhiều tài liệu và support</div>
+                <div>
+                  <strong>Cộng đồng lớn:</strong> Nhiều tài liệu và support
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Replication:</strong> Master-slave, master-master</div>
+                <div>
+                  <strong>Replication:</strong> Master-slave, master-master
+                </div>
               </li>
             </ul>
           </div>
@@ -60,19 +66,27 @@ export default function MySQL() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-orange-500 mr-2">!</span>
-                <div><strong>Licensing:</strong> Dual license (GPL vs Commercial)</div>
+                <div>
+                  <strong>Licensing:</strong> Dual license (GPL vs Commercial)
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-orange-500 mr-2">!</span>
-                <div><strong>Complex queries:</strong> Không mạnh bằng PostgreSQL</div>
+                <div>
+                  <strong>Complex queries:</strong> Không mạnh bằng PostgreSQL
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-orange-500 mr-2">!</span>
-                <div><strong>Storage engines:</strong> Cần hiểu để tối ưu</div>
+                <div>
+                  <strong>Storage engines:</strong> Cần hiểu để tối ưu
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-orange-500 mr-2">!</span>
-                <div><strong>Memory usage:</strong> Có thể tiêu tốn nhiều RAM</div>
+                <div>
+                  <strong>Memory usage:</strong> Có thể tiêu tốn nhiều RAM
+                </div>
               </li>
             </ul>
           </div>
@@ -86,7 +100,7 @@ export default function MySQL() {
 
         <h4 className="text-lg font-semibold mb-3">Kiểu số (Numeric Types):</h4>
         <CodeBlock language="sql">
-{`-- Số nguyên
+          {`-- Số nguyên
 TINYINT     -- 1 byte, -128 to 127
 SMALLINT    -- 2 bytes, -32,768 to 32,767
 MEDIUMINT   -- 3 bytes, -8,388,608 to 8,388,607
@@ -109,7 +123,7 @@ CREATE TABLE products (
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Kiểu chuỗi (String Types):</h4>
         <CodeBlock language="sql">
-{`-- Chuỗi có độ dài cố định và thay đổi
+          {`-- Chuỗi có độ dài cố định và thay đổi
 CHAR(M)       -- Fixed length, 0-255 characters
 VARCHAR(M)    -- Variable length, 0-65,535 characters
 TEXT          -- Up to 65,535 characters
@@ -133,7 +147,7 @@ CREATE TABLE users (
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Kiểu ngày tháng (Date/Time Types):</h4>
         <CodeBlock language="sql">
-{`-- Các kiểu ngày tháng
+          {`-- Các kiểu ngày tháng
 DATE          -- YYYY-MM-DD (1000-01-01 to 9999-12-31)
 TIME          -- HH:MM:SS (-838:59:59 to 838:59:59)
 DATETIME      -- YYYY-MM-DD HH:MM:SS (1000-01-01 to 9999-12-31)
@@ -153,7 +167,7 @@ CREATE TABLE events (
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Kiểu đặc biệt (Special Types):</h4>
         <CodeBlock language="sql">
-{`-- Boolean
+          {`-- Boolean
 BOOLEAN       -- TINYINT(1), 0=FALSE, 1=TRUE
 
 -- Enum
@@ -178,13 +192,11 @@ CREATE TABLE posts (
       </Card>
 
       <Card title="Lệnh SQL cơ bản">
-        <p className="mb-4">
-          Các lệnh SQL cơ bản để thao tác với dữ liệu trong MySQL.
-        </p>
+        <p className="mb-4">Các lệnh SQL cơ bản để thao tác với dữ liệu trong MySQL.</p>
 
         <h4 className="text-lg font-semibold mb-3">CREATE - Tạo cơ sở dữ liệu và bảng:</h4>
         <CodeBlock language="sql">
-{`-- Tạo database
+          {`-- Tạo database
 CREATE DATABASE blog_app
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
@@ -234,7 +246,7 @@ CREATE TABLE posts (
 
         <h4 className="text-lg font-semibold mb-3 mt-6">INSERT - Thêm dữ liệu:</h4>
         <CodeBlock language="sql">
-{`-- Insert một record
+          {`-- Insert một record
 INSERT INTO users (username, email, password, full_name)
 VALUES ('john_doe', 'john@example.com', 'hashed_password', 'John Doe');
 
@@ -266,7 +278,7 @@ ON DUPLICATE KEY UPDATE
 
         <h4 className="text-lg font-semibold mb-3 mt-6">SELECT - Truy vấn dữ liệu:</h4>
         <CodeBlock language="sql">
-{`-- Basic SELECT
+          {`-- Basic SELECT
 SELECT * FROM users;
 SELECT username, email, created_at FROM users;
 
@@ -327,7 +339,7 @@ HAVING COUNT(*) > 5;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">UPDATE - Cập nhật dữ liệu:</h4>
         <CodeBlock language="sql">
-{`-- Basic UPDATE
+          {`-- Basic UPDATE
 UPDATE users
 SET full_name = 'John Smith'
 WHERE username = 'john_doe';
@@ -362,7 +374,7 @@ WHERE id IN (SELECT DISTINCT user_id FROM posts);`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">DELETE - Xóa dữ liệu:</h4>
         <CodeBlock language="sql">
-{`-- Basic DELETE
+          {`-- Basic DELETE
 DELETE FROM posts WHERE status = 'draft' AND created_at < '2023-01-01';
 
 -- DELETE với JOIN
@@ -394,7 +406,7 @@ LIMIT 100;`}
 
         <h4 className="text-lg font-semibold mb-3">Các loại Index:</h4>
         <CodeBlock language="sql">
-{`-- Primary Index (tự động tạo với PRIMARY KEY)
+          {`-- Primary Index (tự động tạo với PRIMARY KEY)
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,  -- Primary index
     username VARCHAR(50) UNIQUE         -- Unique index
@@ -424,7 +436,7 @@ CREATE INDEX idx_title_prefix ON posts(title(50));`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Sử dụng EXPLAIN để phân tích query:</h4>
         <CodeBlock language="sql">
-{`-- EXPLAIN basic
+          {`-- EXPLAIN basic
 EXPLAIN SELECT * FROM posts WHERE user_id = 1;
 
 -- EXPLAIN FORMAT=JSON cho thông tin chi tiết
@@ -451,7 +463,7 @@ AND created_at > '2024-01-01';
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Query Optimization Tips:</h4>
         <CodeBlock language="sql">
-{`-- 1. Sử dụng LIMIT để giới hạn kết quả
+          {`-- 1. Sử dụng LIMIT để giới hạn kết quả
 SELECT * FROM posts
 WHERE status = 'published'
 ORDER BY created_at DESC
@@ -497,7 +509,7 @@ ORDER BY created_at DESC;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Index Management:</h4>
         <CodeBlock language="sql">
-{`-- Xem tất cả indexes của bảng
+          {`-- Xem tất cả indexes của bảng
 SHOW INDEX FROM posts;
 
 -- Xem size của indexes
@@ -540,7 +552,8 @@ AND s.table_schema NOT IN ('mysql', 'performance_schema', 'information_schema');
           <ul className="space-y-3">
             <li>
               <strong className="text-blue-600">Atomicity (Tính nguyên tử):</strong>
-              Transaction là một đơn vị không thể chia tách - hoặc tất cả operations thành công, hoặc tất cả fail
+              Transaction là một đơn vị không thể chia tách - hoặc tất cả operations thành công,
+              hoặc tất cả fail
             </li>
             <li>
               <strong className="text-green-600">Consistency (Tính nhất quán):</strong>
@@ -559,7 +572,7 @@ AND s.table_schema NOT IN ('mysql', 'performance_schema', 'information_schema');
 
         <h4 className="text-lg font-semibold mb-3">Basic Transactions:</h4>
         <CodeBlock language="sql">
-{`-- Transaction cơ bản
+          {`-- Transaction cơ bản
 START TRANSACTION;
 
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
@@ -592,7 +605,7 @@ COMMIT;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Isolation Levels:</h4>
         <CodeBlock language="sql">
-{`-- Xem isolation level hiện tại
+          {`-- Xem isolation level hiện tại
 SELECT @@transaction_isolation;
 
 -- Set isolation level
@@ -653,7 +666,7 @@ COMMIT;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Deadlock Handling:</h4>
         <CodeBlock language="sql">
-{`-- Deadlock example và cách xử lý
+          {`-- Deadlock example và cách xử lý
 DELIMITER //
 CREATE PROCEDURE transfer_money(
     IN from_account INT,
@@ -703,13 +716,11 @@ DELIMITER ;`}
       </Card>
 
       <Card title="Backup và Recovery">
-        <p className="mb-4">
-          Backup và recovery là phần quan trọng để đảm bảo an toàn dữ liệu.
-        </p>
+        <p className="mb-4">Backup và recovery là phần quan trọng để đảm bảo an toàn dữ liệu.</p>
 
         <h4 className="text-lg font-semibold mb-3">MySQL Dump:</h4>
         <CodeBlock language="bash">
-{`# Backup single database
+          {`# Backup single database
 mysqldump -u username -p database_name > backup.sql
 
 # Backup với structure + data
@@ -736,7 +747,7 @@ mysqldump -u username -p --single-transaction --routines --triggers database_nam
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Restore Database:</h4>
         <CodeBlock language="bash">
-{`# Restore từ backup file
+          {`# Restore từ backup file
 mysql -u username -p database_name < backup.sql
 
 # Restore compressed backup
@@ -751,7 +762,7 @@ mysql -u username -p database_name < backup.sql 2> restore_errors.log`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Automated Backup Script:</h4>
         <CodeBlock language="bash">
-{`#!/bin/bash
+          {`#!/bin/bash
 
 # MySQL backup script
 DB_USER="backup_user"
@@ -790,7 +801,7 @@ fi
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Point-in-Time Recovery:</h4>
         <CodeBlock language="bash">
-{`# Enable binary logging in my.cnf
+          {`# Enable binary logging in my.cnf
 [mysqld]
 log-bin=mysql-bin
 server-id=1
@@ -820,37 +831,51 @@ mysqlbinlog --start-position=4 --stop-position=106 \
 
       <Card title="Express.js - Backend API cho MySQL">
         <p className="mb-4">
-          <strong>Express.js</strong> đóng vai trò là backend server để tạo RESTful APIs, 
-          kết nối React frontend với MySQL database.
+          <strong>Express.js</strong> đóng vai trò là backend server để tạo RESTful APIs, kết nối
+          React frontend với MySQL database.
         </p>
 
         <div className="bg-blue-50 p-4 rounded-lg mb-4">
           <h4 className="font-semibold text-blue-800 mb-2">Vai trò của Express.js trong stack:</h4>
           <ul className="space-y-1 text-blue-700">
-            <li>• <strong>API Layer:</strong> Tạo endpoints REST cho CRUD operations</li>
-            <li>• <strong>Database Connection:</strong> Quản lý connection pool với MySQL</li>
-            <li>• <strong>Authentication:</strong> Xử lý đăng nhập, phân quyền</li>
-            <li>• <strong>Middleware:</strong> Validation, logging, error handling</li>
-            <li>• <strong>Security:</strong> CORS, rate limiting, input sanitization</li>
+            <li>
+              • <strong>API Layer:</strong> Tạo endpoints REST cho CRUD operations
+            </li>
+            <li>
+              • <strong>Database Connection:</strong> Quản lý connection pool với MySQL
+            </li>
+            <li>
+              • <strong>Authentication:</strong> Xử lý đăng nhập, phân quyền
+            </li>
+            <li>
+              • <strong>Middleware:</strong> Validation, logging, error handling
+            </li>
+            <li>
+              • <strong>Security:</strong> CORS, rate limiting, input sanitization
+            </li>
           </ul>
         </div>
 
         <div className="bg-green-50 p-4 rounded-lg mb-4">
           <p className="text-green-800">
-            <strong>📚 Tìm hiểu chi tiết:</strong> Để học Express.js từ cơ bản đến nâng cao, 
-            vui lòng xem trang <Link href="/express" className="text-blue-600 hover:text-blue-800 underline">Express.js Framework</Link>.
+            <strong>📚 Tìm hiểu chi tiết:</strong> Để học Express.js từ cơ bản đến nâng cao, vui
+            lòng xem trang{' '}
+            <Link href="/express" className="text-blue-600 hover:text-blue-800 underline">
+              Express.js Framework
+            </Link>
+            .
           </p>
         </div>
 
         <h4 className="text-lg font-semibold mb-3">Express + MySQL Setup cơ bản:</h4>
         <CodeBlock language="bash">
-{`# Cài đặt dependencies
+          {`# Cài đặt dependencies
 npm install express mysql2 cors dotenv
 npm install -D nodemon`}
         </CodeBlock>
 
         <CodeBlock>
-{`// server.js - Express server với MySQL
+          {`// server.js - Express server với MySQL
 const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
@@ -886,20 +911,18 @@ app.listen(3001, () => {
       </Card>
 
       <Card title="Tích hợp MySQL với React">
-        <p className="mb-4">
-          Kết nối React frontend với MySQL backend thông qua RESTful APIs.
-        </p>
+        <p className="mb-4">Kết nối React frontend với MySQL backend thông qua RESTful APIs.</p>
 
         <h4 className="text-lg font-semibold mb-3">Backend API Setup (Express + MySQL):</h4>
         <CodeBlock language="bash">
-{`# Cài đặt dependencies
+          {`# Cài đặt dependencies
 npm init -y
 npm install express mysql2 cors dotenv bcrypt jsonwebtoken
 npm install -D nodemon`}
         </CodeBlock>
 
         <CodeBlock>
-{`// server.js
+          {`// server.js
 const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
@@ -1104,7 +1127,7 @@ app.listen(3001, () => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">React Frontend Integration:</h4>
         <CodeBlock>
-{`// api/client.js - API client setup
+          {`// api/client.js - API client setup
 const API_BASE_URL = 'http://localhost:3001/api';
 
 class ApiClient {
@@ -1207,7 +1230,7 @@ export default new ApiClient();`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">React Components với MySQL data:</h4>
         <CodeBlock>
-{`// components/PostList.js
+          {`// components/PostList.js
 import React, { useState, useEffect } from 'react';
 import apiClient from '../api/client';
 
@@ -1306,7 +1329,7 @@ export default PostList;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Custom Hooks cho MySQL operations:</h4>
         <CodeBlock>
-{`// hooks/usePosts.js
+          {`// hooks/usePosts.js
 import { useState, useEffect } from 'react';
 import apiClient from '../api/client';
 

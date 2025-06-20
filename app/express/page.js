@@ -1,6 +1,6 @@
-import Card from "../components/Card";
-import CodeBlock from "../components/CodeBlock";
-import Link from "next/link";
+import Link from 'next/link';
+import Card from '../components/Card';
+import CodeBlock from '../components/CodeBlock';
 
 export default function Express() {
   return (
@@ -10,14 +10,15 @@ export default function Express() {
           Express.js - Web Framework cho Node.js
         </h1>
         <p className="text-xl text-gray-600">
-          Tìm hiểu về Express.js từ cơ bản đến nâng cao, middleware, routing và integration với database
+          Tìm hiểu về Express.js từ cơ bản đến nâng cao, middleware, routing và integration với
+          database
         </p>
       </div>
 
       <Card title="Express.js là gì?">
         <p className="mb-4">
-          <strong>Express.js</strong> là một web framework minimal và linh hoạt cho Node.js, 
-          cung cấp một bộ tính năng mạnh mẽ để phát triển web và mobile applications.
+          <strong>Express.js</strong> là một web framework minimal và linh hoạt cho Node.js, cung
+          cấp một bộ tính năng mạnh mẽ để phát triển web và mobile applications.
         </p>
 
         <div className="bg-green-50 p-4 rounded-lg mb-4">
@@ -39,23 +40,33 @@ export default function Express() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Minimal:</strong> Lightweight, không bloated</div>
+                <div>
+                  <strong>Minimal:</strong> Lightweight, không bloated
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Flexible:</strong> Không ràng buộc cấu trúc</div>
+                <div>
+                  <strong>Flexible:</strong> Không ràng buộc cấu trúc
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Fast:</strong> Hiệu suất cao, low overhead</div>
+                <div>
+                  <strong>Fast:</strong> Hiệu suất cao, low overhead
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Unopinionated:</strong> Tự do thiết kế architecture</div>
+                <div>
+                  <strong>Unopinionated:</strong> Tự do thiết kế architecture
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
-                <div><strong>Middleware:</strong> Hệ thống plugin mạnh mẽ</div>
+                <div>
+                  <strong>Middleware:</strong> Hệ thống plugin mạnh mẽ
+                </div>
               </li>
             </ul>
           </div>
@@ -89,13 +100,11 @@ export default function Express() {
       </Card>
 
       <Card title="Cài đặt và Setup">
-        <p className="mb-4">
-          Hướng dẫn cài đặt Express.js và setup project cơ bản.
-        </p>
+        <p className="mb-4">Hướng dẫn cài đặt Express.js và setup project cơ bản.</p>
 
         <h4 className="text-lg font-semibold mb-3">Khởi tạo project mới:</h4>
         <CodeBlock language="bash">
-{`# Tạo thư mục project
+          {`# Tạo thư mục project
 mkdir my-express-app
 cd my-express-app
 
@@ -115,7 +124,7 @@ npm install -D nodemon jest supertest eslint prettier`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Cấu trúc project được recommend:</h4>
         <CodeBlock language="text">
-{`my-express-app/
+          {`my-express-app/
 ├── src/
 │   ├── controllers/      # Route handlers
 │   ├── middleware/       # Custom middleware
@@ -135,7 +144,7 @@ npm install -D nodemon jest supertest eslint prettier`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Express Server cơ bản:</h4>
         <CodeBlock>
-{`// server.js
+          {`// server.js
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -150,7 +159,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // Basic route
 app.get('/', (req, res) => {
-  res.json({ 
+  res.json({
     message: 'Express server is running!',
     timestamp: new Date().toISOString()
   });
@@ -158,8 +167,8 @@ app.get('/', (req, res) => {
 
 // Health check endpoint
 app.get('/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'OK', 
+  res.status(200).json({
+    status: 'OK',
     timestamp: new Date().toISOString(),
     uptime: process.uptime()
   });
@@ -181,7 +190,7 @@ module.exports = app;`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Package.json scripts:</h4>
         <CodeBlock language="json">
-{`{
+          {`{
   "name": "my-express-app",
   "version": "1.0.0",
   "scripts": {
@@ -208,13 +217,14 @@ module.exports = app;`}
 
       <Card title="Middleware System">
         <p className="mb-4">
-          Middleware là heart của Express.js, cho phép bạn thực thi code trong request-response cycle.
+          Middleware là heart của Express.js, cho phép bạn thực thi code trong request-response
+          cycle.
         </p>
 
         <h4 className="text-lg font-semibold mb-3">Middleware hoạt động như thế nào?</h4>
         <div className="bg-blue-50 p-4 rounded-lg mb-4">
           <p className="text-blue-700">
-            Middleware functions có quyền truy cập vào request object (req), response object (res), 
+            Middleware functions có quyền truy cập vào request object (req), response object (res),
             và next middleware function trong request-response cycle. Chúng có thể:
           </p>
           <ul className="mt-2 space-y-1 text-blue-700">
@@ -227,7 +237,7 @@ module.exports = app;`}
 
         <h4 className="text-lg font-semibold mb-3">Các loại Middleware:</h4>
         <CodeBlock>
-{`// 1. Application-level middleware
+          {`// 1. Application-level middleware
 app.use((req, res, next) => {
   console.log('Time:', Date.now());
   next(); // Quan trọng: phải call next() để tiếp tục
@@ -260,7 +270,7 @@ app.use(helmet()); // Security headers`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Custom Middleware Examples:</h4>
         <CodeBlock>
-{`// Authentication middleware
+          {`// Authentication middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
@@ -327,7 +337,7 @@ app.use('/api/protected', authenticateToken);`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Middleware Execution Order:</h4>
         <CodeBlock>
-{`const express = require('express');
+          {`const express = require('express');
 const app = express();
 
 // 1. Global middleware - chạy cho tất cả requests
@@ -337,7 +347,7 @@ app.use((req, res, next) => {
 });
 
 // 2. Route-specific middleware
-app.get('/api/users', 
+app.get('/api/users',
   (req, res, next) => {
     console.log('2. Route middleware 1');
     next();
@@ -385,7 +395,7 @@ app.use((req, res) => {
 
         <h4 className="text-lg font-semibold mb-3">Basic Routing:</h4>
         <CodeBlock>
-{`const express = require('express');
+          {`const express = require('express');
 const app = express();
 
 // HTTP Methods
@@ -420,7 +430,7 @@ app.route('/users/:id')
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Route Parameters:</h4>
         <CodeBlock>
-{`// Route parameters
+          {`// Route parameters
 app.get('/users/:id', (req, res) => {
   const userId = req.params.id;
   res.json({ userId });
@@ -450,17 +460,17 @@ app.get('/files/*', (req, res) => {
 // Query parameters
 app.get('/search', (req, res) => {
   const { q, page = 1, limit = 10 } = req.query;
-  res.json({ 
-    query: q, 
-    page: parseInt(page), 
-    limit: parseInt(limit) 
+  res.json({
+    query: q,
+    page: parseInt(page),
+    limit: parseInt(limit)
   });
 });`}
         </CodeBlock>
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Express Router:</h4>
         <CodeBlock>
-{`// routes/users.js
+          {`// routes/users.js
 const express = require('express');
 const router = express.Router();
 
@@ -474,10 +484,10 @@ router.use((req, res, next) => {
 router.get('/', async (req, res) => {
   try {
     const { page = 1, limit = 10, search } = req.query;
-    
+
     // Simulate database query
     const users = await getUsersFromDB({ page, limit, search });
-    
+
     res.json({
       users,
       pagination: {
@@ -495,11 +505,11 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const user = await getUserById(req.params.id);
-    
+
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
-    
+
     res.json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -510,14 +520,14 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { username, email, password } = req.body;
-    
+
     // Validation
     if (!username || !email || !password) {
-      return res.status(400).json({ 
-        error: 'Username, email and password are required' 
+      return res.status(400).json({
+        error: 'Username, email and password are required'
       });
     }
-    
+
     const newUser = await createUser({ username, email, password });
     res.status(201).json(newUser);
   } catch (error) {
@@ -538,7 +548,7 @@ app.use('/api/users', userRoutes);`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Advanced Routing Patterns:</h4>
         <CodeBlock>
-{`// Route with regex pattern
+          {`// Route with regex pattern
 app.get(/.*fly$/, (req, res) => {
   res.json({ message: 'Ends with "fly"' });
 });
@@ -597,7 +607,7 @@ app.get('/users/:id', async (req, res, next) => {
 
         <h4 className="text-lg font-semibold mb-3">Request Object (req):</h4>
         <CodeBlock>
-{`app.post('/api/example', (req, res) => {
+          {`app.post('/api/example', (req, res) => {
   // Request properties
   console.log('Method:', req.method);           // POST
   console.log('URL:', req.url);                 // /api/example?page=1
@@ -638,7 +648,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Response Object (res):</h4>
         <CodeBlock>
-{`app.get('/api/example', (req, res) => {
+          {`app.get('/api/example', (req, res) => {
   // Status codes
   res.status(200);                    // Set status code
   res.sendStatus(404);                // Send status with default message
@@ -683,7 +693,7 @@ app.get('/stream', (req, res) => {
   let counter = 0;
   const interval = setInterval(() => {
     res.write(\`Chunk \${counter++}\\n\`);
-    
+
     if (counter > 10) {
       res.end('Stream finished');
       clearInterval(interval);
@@ -694,7 +704,7 @@ app.get('/stream', (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Content Type Handling:</h4>
         <CodeBlock>
-{`// JSON responses
+          {`// JSON responses
 app.get('/api/users', (req, res) => {
   res.json({
     users: [
@@ -720,7 +730,7 @@ app.get('/home', (req, res) => {
 app.get('/download/:filename', (req, res) => {
   const filename = req.params.filename;
   const filepath = path.join(__dirname, 'uploads', filename);
-  
+
   res.download(filepath, (err) => {
     if (err) {
       res.status(404).json({ error: 'File not found' });
@@ -731,7 +741,7 @@ app.get('/download/:filename', (req, res) => {
 // Content negotiation
 app.get('/api/data', (req, res) => {
   const data = { message: 'Hello', timestamp: Date.now() };
-  
+
   res.format({
     'text/plain': () => {
       res.send(\`\${data.message} at \${data.timestamp}\`);
@@ -751,7 +761,7 @@ app.get('/api/data', (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Response Helper Functions:</h4>
         <CodeBlock>
-{`// Custom response helpers
+          {`// Custom response helpers
 const responseHelpers = (req, res, next) => {
   // Success responses
   res.success = (data, message = 'Success') => {
@@ -824,7 +834,7 @@ app.get('/api/posts', async (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3">Error Middleware:</h4>
         <CodeBlock>
-{`// Error handling middleware (must have 4 parameters)
+          {`// Error handling middleware (must have 4 parameters)
 const errorHandler = (err, req, res, next) => {
   // Log error
   console.error('Error Stack:', err.stack);
@@ -876,7 +886,7 @@ app.use(errorHandler);`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Custom Error Classes:</h4>
         <CodeBlock>
-{`// Custom error classes
+          {`// Custom error classes
 class AppError extends Error {
   constructor(message, statusCode) {
     super(message);
@@ -911,11 +921,11 @@ class UnauthorizedError extends AppError {
 app.get('/users/:id', async (req, res, next) => {
   try {
     const user = await getUserById(req.params.id);
-    
+
     if (!user) {
       throw new NotFoundError('User');
     }
-    
+
     res.json(user);
   } catch (error) {
     next(error); // Pass to error middleware
@@ -938,7 +948,7 @@ app.get('/posts', asyncHandler(async (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Global Error Handlers:</h4>
         <CodeBlock>
-{`// Uncaught exception handler
+          {`// Uncaught exception handler
 process.on('uncaughtException', (err) => {
   console.error('UNCAUGHT EXCEPTION! 💥 Shutting down...');
   console.error(err.name, err.message);
@@ -950,7 +960,7 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (err) => {
   console.error('UNHANDLED REJECTION! 💥 Shutting down...');
   console.error(err.name, err.message);
-  
+
   server.close(() => {
     process.exit(1);
   });
@@ -959,7 +969,7 @@ process.on('unhandledRejection', (err) => {
 // Graceful shutdown
 process.on('SIGTERM', () => {
   console.log('👋 SIGTERM RECEIVED. Shutting down gracefully');
-  
+
   server.close(() => {
     console.log('💥 Process terminated!');
   });
@@ -974,7 +984,7 @@ app.all('*', (req, res, next) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Error Logging:</h4>
         <CodeBlock>
-{`const winston = require('winston');
+          {`const winston = require('winston');
 
 // Configure logger
 const logger = winston.createLogger({
@@ -1013,8 +1023,8 @@ const errorHandler = (err, req, res, next) => {
   // Send error response
   const error = {
     success: false,
-    message: process.env.NODE_ENV === 'production' 
-      ? 'Something went wrong' 
+    message: process.env.NODE_ENV === 'production'
+      ? 'Something went wrong'
       : err.message,
     timestamp: new Date().toISOString()
   };
@@ -1029,13 +1039,11 @@ const errorHandler = (err, req, res, next) => {
       </Card>
 
       <Card title="Security và Best Practices">
-        <p className="mb-4">
-          Các biện pháp bảo mật và best practices cho Express applications.
-        </p>
+        <p className="mb-4">Các biện pháp bảo mật và best practices cho Express applications.</p>
 
         <h4 className="text-lg font-semibold mb-3">Essential Security Middleware:</h4>
         <CodeBlock>
-{`const helmet = require('helmet');
+          {`const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
@@ -1089,7 +1097,7 @@ app.use(compression());`}
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Authentication & Authorization:</h4>
         <CodeBlock>
-{`const jwt = require('jsonwebtoken');
+          {`const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 // JWT Authentication
@@ -1127,8 +1135,8 @@ const authorize = (...roles) => {
     }
 
     if (!roles.includes(req.user.role)) {
-      return res.status(403).json({ 
-        error: 'Access denied. Insufficient permissions.' 
+      return res.status(403).json({
+        error: 'Access denied. Insufficient permissions.'
       });
     }
 
@@ -1154,7 +1162,7 @@ app.get('/api/admin/*', authenticateToken, authorize('admin'), (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Input Validation:</h4>
         <CodeBlock>
-{`const Joi = require('joi');
+          {`const Joi = require('joi');
 
 // Validation schemas
 const userSchema = Joi.object({
@@ -1210,7 +1218,7 @@ app.post('/api/users', validate(userSchema), async (req, res) => {
 
         <h4 className="text-lg font-semibold mb-3 mt-6">Environment Configuration:</h4>
         <CodeBlock>
-{`// config/config.js
+          {`// config/config.js
 require('dotenv').config();
 
 const config = {
@@ -1288,27 +1296,42 @@ CORS_ORIGIN=http://localhost:3000`}
             <div className="space-y-3 text-sm">
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">1. Express.js là gì và tại sao nó phổ biến?</p>
-                <p className="text-gray-600 mt-1">Express.js là minimal web framework cho Node.js, phổ biến vì lightweight, flexible, có middleware system mạnh mẽ và cộng đồng lớn.</p>
+                <p className="text-gray-600 mt-1">
+                  Express.js là minimal web framework cho Node.js, phổ biến vì lightweight,
+                  flexible, có middleware system mạnh mẽ và cộng đồng lớn.
+                </p>
               </div>
-              
+
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">2. Middleware trong Express hoạt động như thế nào?</p>
-                <p className="text-gray-600 mt-1">Middleware là functions thực thi trong request-response cycle, có thể modify req/res objects hoặc kết thúc cycle. Chúng chạy tuần tự theo thứ tự định nghĩa.</p>
+                <p className="text-gray-600 mt-1">
+                  Middleware là functions thực thi trong request-response cycle, có thể modify
+                  req/res objects hoặc kết thúc cycle. Chúng chạy tuần tự theo thứ tự định nghĩa.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">3. Phân biệt app.use() và app.get()?</p>
-                <p className="text-gray-600 mt-1">app.use() định nghĩa middleware cho tất cả HTTP methods, app.get() chỉ cho GET requests. app.use() thường dùng cho middleware global.</p>
+                <p className="text-gray-600 mt-1">
+                  app.use() định nghĩa middleware cho tất cả HTTP methods, app.get() chỉ cho GET
+                  requests. app.use() thường dùng cho middleware global.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">4. Router trong Express là gì?</p>
-                <p className="text-gray-600 mt-1">Router là mini-application có thể định nghĩa routes và middleware riêng, giúp tổ chức code và tách biệt logic routing.</p>
+                <p className="text-gray-600 mt-1">
+                  Router là mini-application có thể định nghĩa routes và middleware riêng, giúp tổ
+                  chức code và tách biệt logic routing.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">5. Các HTTP methods chính trong REST API?</p>
-                <p className="text-gray-600 mt-1">GET (read), POST (create), PUT (update/replace), PATCH (partial update), DELETE (remove), HEAD (headers only), OPTIONS (CORS preflight).</p>
+                <p className="text-gray-600 mt-1">
+                  GET (read), POST (create), PUT (update/replace), PATCH (partial update), DELETE
+                  (remove), HEAD (headers only), OPTIONS (CORS preflight).
+                </p>
               </div>
             </div>
           </div>
@@ -1318,27 +1341,42 @@ CORS_ORIGIN=http://localhost:3000`}
             <div className="space-y-3 text-sm">
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">6. Xử lý errors trong Express như thế nào?</p>
-                <p className="text-gray-600 mt-1">Sử dụng error-handling middleware với 4 parameters (err, req, res, next). Express tự động catch synchronous errors, async errors cần try-catch và next(error).</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng error-handling middleware với 4 parameters (err, req, res, next). Express
+                  tự động catch synchronous errors, async errors cần try-catch và next(error).
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">7. Cách optimize performance của Express app?</p>
-                <p className="text-gray-600 mt-1">Sử dụng compression, caching, connection pooling, clustering, load balancing, minify static files, implement rate limiting.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng compression, caching, connection pooling, clustering, load balancing,
+                  minify static files, implement rate limiting.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">8. Security best practices cho Express?</p>
-                <p className="text-gray-600 mt-1">Sử dụng helmet.js, validate input, implement CORS properly, use HTTPS, rate limiting, secure session management, update dependencies.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng helmet.js, validate input, implement CORS properly, use HTTPS, rate
+                  limiting, secure session management, update dependencies.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">9. Cách handle file uploads trong Express?</p>
-                <p className="text-gray-600 mt-1">Sử dụng multer middleware để parse multipart/form-data, cấu hình storage (memory/disk), validate file types và size limits.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng multer middleware để parse multipart/form-data, cấu hình storage
+                  (memory/disk), validate file types và size limits.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">10. Template engines trong Express?</p>
-                <p className="text-gray-600 mt-1">EJS, Pug, Handlebars. Set với app.set('view engine', 'ejs'), render với res.render('template', data).</p>
+                <p className="text-gray-600 mt-1">
+                  EJS, Pug, Handlebars. Set với app.set('view engine', 'ejs'), render với
+                  res.render('template', data).
+                </p>
               </div>
             </div>
           </div>
@@ -1348,27 +1386,42 @@ CORS_ORIGIN=http://localhost:3000`}
             <div className="space-y-3 text-sm">
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">11. Cách implement authentication với JWT?</p>
-                <p className="text-gray-600 mt-1">Tạo JWT token khi login, verify token qua middleware, sử dụng refresh tokens, implement proper logout mechanism.</p>
+                <p className="text-gray-600 mt-1">
+                  Tạo JWT token khi login, verify token qua middleware, sử dụng refresh tokens,
+                  implement proper logout mechanism.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">12. Làm thế nào để scale Express application?</p>
-                <p className="text-gray-600 mt-1">Sử dụng cluster module, load balancing với nginx, microservices architecture, database optimization, caching strategies.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng cluster module, load balancing với nginx, microservices architecture,
+                  database optimization, caching strategies.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">13. Testing Express applications như thế nào?</p>
-                <p className="text-gray-600 mt-1">Sử dụng Jest/Mocha + Supertest để test APIs, mock database connections, test middleware functionality, integration testing.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng Jest/Mocha + Supertest để test APIs, mock database connections, test
+                  middleware functionality, integration testing.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">14. Debugging Express apps trong production?</p>
-                <p className="text-gray-600 mt-1">Sử dụng logging libraries (Winston), monitoring tools (New Relic, DataDog), error tracking (Sentry), performance monitoring.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng logging libraries (Winston), monitoring tools (New Relic, DataDog), error
+                  tracking (Sentry), performance monitoring.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">15. CORS là gì và cách handle trong Express?</p>
-                <p className="text-gray-600 mt-1">Cross-Origin Resource Sharing. Sử dụng cors middleware, configure origins, methods, headers. Handle preflight requests.</p>
+                <p className="text-gray-600 mt-1">
+                  Cross-Origin Resource Sharing. Sử dụng cors middleware, configure origins,
+                  methods, headers. Handle preflight requests.
+                </p>
               </div>
             </div>
           </div>
@@ -1377,28 +1430,45 @@ CORS_ORIGIN=http://localhost:3000`}
             <h4 className="font-semibold mb-2 text-orange-600">Câu hỏi chuyên sâu:</h4>
             <div className="space-y-3 text-sm">
               <div className="p-3 bg-gray-50 rounded">
-                <p className="font-medium">16. Event loop trong Node.js ảnh hưởng Express như thế nào?</p>
-                <p className="text-gray-600 mt-1">Express chạy trên single-threaded event loop. Blocking operations sẽ block toàn bộ app. Cần sử dụng async operations và worker threads cho CPU-intensive tasks.</p>
+                <p className="font-medium">
+                  16. Event loop trong Node.js ảnh hưởng Express như thế nào?
+                </p>
+                <p className="text-gray-600 mt-1">
+                  Express chạy trên single-threaded event loop. Blocking operations sẽ block toàn bộ
+                  app. Cần sử dụng async operations và worker threads cho CPU-intensive tasks.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">17. Memory leaks trong Express và cách tránh?</p>
-                <p className="text-gray-600 mt-1">Unclosed database connections, event listeners không cleanup, circular references, large objects trong closure. Monitor với heap snapshots.</p>
+                <p className="text-gray-600 mt-1">
+                  Unclosed database connections, event listeners không cleanup, circular references,
+                  large objects trong closure. Monitor với heap snapshots.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">18. Streaming trong Express applications?</p>
-                <p className="text-gray-600 mt-1">Sử dụng res.write() và res.end() cho custom streams, pipe từ readable streams, handle backpressure, streaming file uploads/downloads.</p>
+                <p className="text-gray-600 mt-1">
+                  Sử dụng res.write() và res.end() cho custom streams, pipe từ readable streams,
+                  handle backpressure, streaming file uploads/downloads.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">19. Microservices architecture với Express?</p>
-                <p className="text-gray-600 mt-1">Service discovery, load balancing, circuit breakers, distributed tracing, API gateway patterns, inter-service communication.</p>
+                <p className="text-gray-600 mt-1">
+                  Service discovery, load balancing, circuit breakers, distributed tracing, API
+                  gateway patterns, inter-service communication.
+                </p>
               </div>
 
               <div className="p-3 bg-gray-50 rounded">
                 <p className="font-medium">20. Production deployment best practices?</p>
-                <p className="text-gray-600 mt-1">Process managers (PM2), reverse proxy (nginx), SSL termination, monitoring, logging, graceful shutdowns, health checks, blue-green deployment.</p>
+                <p className="text-gray-600 mt-1">
+                  Process managers (PM2), reverse proxy (nginx), SSL termination, monitoring,
+                  logging, graceful shutdowns, health checks, blue-green deployment.
+                </p>
               </div>
             </div>
           </div>

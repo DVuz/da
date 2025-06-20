@@ -1,14 +1,12 @@
-import Link from "next/link";
-import Card from "./components/Card";
+import Link from 'next/link';
+import Card from './components/Card';
 
 export default function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Hero Section */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-          React Learning Hub
-        </h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">React Learning Hub</h1>
         <p className="text-xl text-gray-600 mb-8">
           Học React từ cơ bản đến nâng cao một cách dễ hiểu và chi tiết
         </p>
@@ -32,7 +30,8 @@ export default function Home() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         <Card title="React Cơ Bản">
           <p className="mb-4">
-            Tìm hiểu React là gì, lợi ích của React, và các khái niệm cơ bản để bắt đầu phát triển ứng dụng.
+            Tìm hiểu React là gì, lợi ích của React, và các khái niệm cơ bản để bắt đầu phát triển
+            ứng dụng.
           </p>
           <Link href="/react-basics" className="text-blue-600 hover:text-blue-800 font-semibold">
             Tìm hiểu thêm →
@@ -41,7 +40,8 @@ export default function Home() {
 
         <Card title="SPA - Single Page Application">
           <p className="mb-4">
-            Khám phá mô hình Single Page Application, cách hoạt động và lợi ích so với ứng dụng web truyền thống.
+            Khám phá mô hình Single Page Application, cách hoạt động và lợi ích so với ứng dụng web
+            truyền thống.
           </p>
           <Link href="/spa" className="text-blue-600 hover:text-blue-800 font-semibold">
             Tìm hiểu thêm →
@@ -59,7 +59,8 @@ export default function Home() {
 
         <Card title="Styling trong React">
           <p className="mb-4">
-            Các phương pháp styling trong React: CSS Modules, Styled Components, Tailwind CSS và nhiều hơn nữa.
+            Các phương pháp styling trong React: CSS Modules, Styled Components, Tailwind CSS và
+            nhiều hơn nữa.
           </p>
           <Link href="/styling" className="text-blue-600 hover:text-blue-800 font-semibold">
             Tìm hiểu thêm →
@@ -77,7 +78,8 @@ export default function Home() {
 
         <Card title="MySQL Database">
           <p className="mb-4">
-            Học MySQL từ cơ bản đến nâng cao: thiết kế database, truy vấn SQL, tối ưu hóa và tích hợp với backend.
+            Học MySQL từ cơ bản đến nâng cao: thiết kế database, truy vấn SQL, tối ưu hóa và tích
+            hợp với backend.
           </p>
           <Link href="/mysql" className="text-blue-600 hover:text-blue-800 font-semibold">
             Tìm hiểu thêm →
@@ -86,7 +88,8 @@ export default function Home() {
 
         <Card title="Express.js Framework">
           <p className="mb-4">
-            Web framework cho Node.js: routing, middleware, RESTful APIs, authentication và kết nối React frontend.
+            Web framework cho Node.js: routing, middleware, RESTful APIs, authentication và kết nối
+            React frontend.
           </p>
           <Link href="/express" className="text-blue-600 hover:text-blue-800 font-semibold">
             Tìm hiểu thêm →
@@ -95,7 +98,8 @@ export default function Home() {
 
         <Card title="Sequelize ORM">
           <p className="mb-4">
-            Object-Relational Mapping với Sequelize: models, associations, migrations và tích hợp với React API.
+            Object-Relational Mapping với Sequelize: models, associations, migrations và tích hợp
+            với React API.
           </p>
           <Link href="/sequelize" className="text-blue-600 hover:text-blue-800 font-semibold">
             Tìm hiểu thêm →
@@ -118,17 +122,15 @@ export default function Home() {
               Mỗi chủ đề được giải thích kỹ lưỡng với ví dụ cụ thể
             </p>
           </div>
-          
+
           <div className="text-center">
             <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">💻</span>
             </div>
             <h3 className="font-semibold text-gray-800 mb-2">Code examples</h3>
-            <p className="text-gray-600 text-sm">
-              Nhiều ví dụ code thực tế dễ hiểu và áp dụng
-            </p>
+            <p className="text-gray-600 text-sm">Nhiều ví dụ code thực tế dễ hiểu và áp dụng</p>
           </div>
-          
+
           <div className="text-center">
             <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🚀</span>
@@ -138,7 +140,7 @@ export default function Home() {
               Nội dung được cập nhật theo phiên bản React mới nhất
             </p>
           </div>
-          
+
           <div className="text-center">
             <div className="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🎯</span>
